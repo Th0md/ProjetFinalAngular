@@ -4,7 +4,7 @@ import {HttpHeaders} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ProgrammeService {
+export class PromotionService {
 
   private headers: HttpHeaders;
 
