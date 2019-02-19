@@ -1,6 +1,6 @@
 export class Promotion {
 
-  constructor(private _debut?: Date, private _fin?: Date, private _nom?: string) {
+  constructor(private _nom?: string, private _debut?: Date, private _fin?: Date) {
 
   }
 

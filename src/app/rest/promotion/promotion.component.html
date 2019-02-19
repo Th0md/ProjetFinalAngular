@@ -1,12 +1,17 @@
+<h1>Promotion</h1>
 <table>
   <tr>
-    <td>Nom de Promosion</td>
+    <td>Nom de Promotion</td>
     <td>Debut</td>
     <td>Fin</td>
+    <td><button>Ajouter</button></td>
+    <td></td>
   </tr>
   <tr *ngFor="let p of promotions">
     <td>{{p.nom}}</td>
     <td>{{p.debut}}</td>
     <td>{{p.fin}}</td>
+    <td><button>Modifier</button></td>
+    <td><button>Supprimer</button></td>
   </tr>
 </table>

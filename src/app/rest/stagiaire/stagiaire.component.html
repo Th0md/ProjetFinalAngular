@@ -1,0 +1,23 @@
+<h1>Stagiaires</h1>
+<table>
+  <tr>
+    <td>Nom</td>
+    <td>Prenom</td>
+    <td>Coordonnées</td>
+    <td>Rue</td>
+    <td>Code postal</td>
+    <td>Ville</td>
+    <td><button>Ajouter</button></td>
+    <td></td>
+  </tr>
+  <tr *ngFor="let s of stagiaires">
+    <td>{{s.nom}}</td>
+    <td>{{s.prenom}}</td>
+    <td>{{s.coordonnees}}</td>
+    <td>{{s.adresse.rue}}</td>
+    <td>{{s.adresse.codePostal}}</td>
+    <td>{{s.adresse.ville}}</td>
+    <td><button>Modifier</button></td>
+    <td><button>Supprimer</button></td>
+  </tr>
+</table>

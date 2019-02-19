@@ -1,12 +1,14 @@
-<h1>Programmes</h1>
+<h1>Modules</h1>
 <table>
   <tr>
-    <td>Titre du Programme</td>
+    <td>Debut</td>
+    <td>Fin</td>
     <td><button>Ajouter</button></td>
     <td></td>
   </tr>
-  <tr *ngFor="let p of programmes">
-    <td>{{p.titre}}</td>
+  <tr *ngFor="let m of modules">
+    <td>{{m.debut}}</td>
+    <td>{{m.fin}}</td>
     <td><button>Modifier</button></td>
     <td><button>Supprimer</button></td>
   </tr>

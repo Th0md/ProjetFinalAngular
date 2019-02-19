@@ -6,13 +6,5 @@ import {HttpHeaders} from '@angular/common/http';
 })
 export class ProgrammeService {
 
-  private headers: HttpHeaders;
 
-  constructor(private http: HttpHeaders) {
-    this.headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Basic ' + btoa('user:user')
-      }
-    );
-  }
 }
