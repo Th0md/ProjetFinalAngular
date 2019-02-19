@@ -9,6 +9,8 @@ import {StagiaireComponent} from './rest/stagiaire/stagiaire.component';
 import {AdresseComponent} from './rest/adresse/adresse.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { EditModuleComponent } from './rest/module/edit-module/edit-module.component';
+import { EditStagiaireComponent } from './rest/stagiaire/edit-stagiaire/edit-stagiaire.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import {HttpClientModule} from '@angular/common/http';
     PromotionComponent,
     ModuleComponent,
     StagiaireComponent,
-    AdresseComponent
+    AdresseComponent,
+    EditModuleComponent,
+    EditStagiaireComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule

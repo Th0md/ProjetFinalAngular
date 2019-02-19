@@ -14,6 +14,19 @@ export class StagiaireComponent implements OnInit {
   constructor(private stagiaireService: StagiaireService) { }
 
   ngOnInit() {
+    this.list();
+  }
+
+  private list() {
+    this.stagiaires = this.stagiaireService.findAll();
+  }
+
+  delete(id: number) {
+    this.stagiaireService.delete(id).subscribe(result => {
+      this.list();
+    }, error => {
+      console.log(error);
+    });
   }
 
 }

@@ -2,8 +2,17 @@ import {Adresse} from './adresse';
 
 export class Stagiaire {
 
-  constructor(private _nom?: string, private _prenom?: string, private _coordonnees?: string, private _adresse?: Adresse){}
+  constructor(private _id?: number, private _nom?: string, private _prenom?: string, private _coordonnees?: string, private _adresse?: Adresse) {
+  }
 
+
+  get id(): number {
+    return this._id;
+  }
+
+  set id(value: number) {
+    this._id = value;
+  }
 
   get nom(): string {
     return this._nom;
