@@ -1,3 +1,12 @@
-<p>
-  promotion works!
-</p>
+<table>
+  <tr>
+    <td>Nom de Promosion</td>
+    <td>Debut</td>
+    <td>Fin</td>
+  </tr>
+  <tr *ngFor="let p of promotions">
+    <td>{{p.nom}}</td>
+    <td>{{p.debut}}</td>
+    <td>{{p.fin}}</td>
+  </tr>
+</table>

@@ -1,6 +1,8 @@
 <table>
   <tr>
-    <td>Titre</td>
+    <td>Titre du Programme</td>
   </tr>
-  
+  <tr *ngFor="let p of programmes">
+    <td>{{p.titre}}</td>
+  </tr>
 </table>
