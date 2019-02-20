@@ -1,7 +1,15 @@
 export class Adresse {
 
-  constructor(private _rue?: string, private _codePostal?: string, private _ville?: string){}
+  constructor(private _id?: number, private _rue?: string, private _codePostal?: string, private _ville?: string){}
 
+
+  get id(): number {
+    return this._id;
+  }
+
+  set id(value: number) {
+    this._id = value;
+  }
 
   get rue(): string {
     return this._rue;

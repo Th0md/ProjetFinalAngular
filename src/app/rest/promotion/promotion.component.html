@@ -1,17 +1,19 @@
 <h1>Promotion</h1>
 <table>
   <tr>
+    <td>Id</td>
     <td>Nom de Promotion</td>
     <td>Debut</td>
     <td>Fin</td>
-    <td><button>Ajouter</button></td>
+    <td><button [routerLink]="['/promotion','edit']" routerLinkActive="active">Ajouter</button></td>
     <td></td>
   </tr>
   <tr *ngFor="let p of promotions">
+    <td>{{p.id}}</td>
     <td>{{p.nom}}</td>
     <td>{{p.debut}}</td>
     <td>{{p.fin}}</td>
-    <td><button>Modifier</button></td>
-    <td><button>Supprimer</button></td>
+    <td><button [routerLink]="['/promotion','edit',p.id]" routerLinkActive="active">Modifier</button></td>
+    <td><button (click)="delete(p.id)">Supprimer</button></td>
   </tr>
 </table>

@@ -1,15 +1,17 @@
 <h1>Modules</h1>
 <table>
   <tr>
+    <td>Id</td>
     <td>Debut</td>
     <td>Fin</td>
-    <td><button>Ajouter</button></td>
+    <td><button [routerLink]="['/module','edit']" routerLinkActive="active">Ajouter</button></td>
     <td></td>
   </tr>
   <tr *ngFor="let m of modules">
+    <td>{{m.id}}</td>
     <td>{{m.debut}}</td>
     <td>{{m.fin}}</td>
-    <td><button>Modifier</button></td>
-    <td><button>Supprimer</button></td>
+    <td><button [routerLink]="['/module','edit',m.id]" routerLinkActive="active">Modifier</button></td>
+    <td><button (click)="delete(m.id)">Supprimer</button></td>
   </tr>
 </table>

@@ -1,7 +1,15 @@
 export class Module {
 
-  constructor(private _debut?: Date, private _fin?: Date){}
+  constructor(private _id?: number, private _debut?: Date, private _fin?: Date){}
 
+
+  get id(): number {
+    return this._id;
+  }
+
+  set id(value: number) {
+    this._id = value;
+  }
 
   get debut(): Date {
     return this._debut;

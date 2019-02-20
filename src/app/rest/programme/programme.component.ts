@@ -26,8 +26,8 @@ export class ProgrammeComponent implements OnInit {
     });
   }
 
-  delete(code: string) {
-    this.programmeService.delete(code).subscribe(result => {
+  delete(id: number) {
+    this.programmeService.delete(id).subscribe(result => {
       this.list();
     }, error => {
       console.log(error);

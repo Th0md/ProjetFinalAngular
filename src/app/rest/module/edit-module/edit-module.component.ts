@@ -17,6 +17,43 @@ export class EditModuleComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe(params => {
+      if (params.id) {
+        this.edit = true;
+        this.moduleService.findById(params.id).subscribe(result => {
+          this.module = result;
+        });
+      }
+    });
+  }
+
+  public save() {
+    if (this.edit) {
+      this.update();
+    } else {
+      this.create();
+    }
+  }
+
+  private create() {
+    this.moduleService.create(this.module).subscribe(result => {
+      this.goList();
+    });
+  }
+
+  private update() {
+    this.moduleService.update(this.module).subscribe(result => {
+      this.goList();
+    });
+  }
+
+
+  public cancel() {
+    this.goList();
+  }
+
+  private goList() {
+    this.router.navigate(['/module']);
   }
 
 }

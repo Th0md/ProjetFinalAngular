@@ -20,28 +20,28 @@ export class ProgrammeService {
   }
 
   public findAll(): Observable<any> {
-    return this.http.get<any>('http://localhost:8080/projetfinal/api/programmes/', {headers: this.headers});
+    return this.http.get<any>('http://localhost:8080/projet/rest/programmes/', {headers: this.headers});
   }
 
   public findById(code: string): Observable<any> {
-    return this.http.get<any>(`http://localhost:8080/projetfinal/api/programmes/${code}`, {headers: this.headers});
+    return this.http.get<any>(`http://localhost:8080/projet/rest/programmes/${code}`, {headers: this.headers});
   }
 
-  public delete(code: string): Observable<any> {
+  public delete(id: number): Observable<any> {
     return this.http.delete(`
-    http://localhost:8080/projetfinal/api/programmes/${code}`, {headers: this.headers});
+    http://localhost:8080/projet/rest/programmes/${id}`, {headers: this.headers});
   }
 
   public update(programme: Programme): Observable<any> {
     console.log(programme);
-    return this.http.put<any>(`http://localhost:8080/projetfinal/api/programmes/${programme.titre}`, programme, {headers: this.headers});
+    return this.http.put<any>(`http://localhost:8080/projet/rest/programmes/${programme.titre}`, programme, {headers: this.headers});
   }
 
   public create(programme: Programme): Observable<any> {
     const p = {
       'titre': programme.titre
     };
-    return this.http.post<any>(`http://localhost:8080/projetfinal/api/programmes`, p, {headers: this.headers});
+    return this.http.post<any>(`http://localhost:8080/projet/rest/programmes`, p, {headers: this.headers});
   }
 
 }

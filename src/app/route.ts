@@ -3,12 +3,10 @@ import {ModuleComponent} from './rest/module/module.component';
 import {StagiaireComponent} from './rest/stagiaire/stagiaire.component';
 import {PromotionComponent} from './rest/promotion/promotion.component';
 import {ProgrammeComponent} from './rest/programme/programme.component';
-import {AdresseComponent} from './rest/adresse/adresse.component';
 import {EditModuleComponent} from './rest/module/edit-module/edit-module.component';
 import {EditStagiaireComponent} from './rest/stagiaire/edit-stagiaire/edit-stagiaire.component';
-import {EditPromotionComponent} from "./rest/promotion/edit-promotion/edit-promotion.component";
-import {EditProgrammeComponent} from "./rest/programme/edit-programme/edit-programme.component";
-import {EditAdresseComponent} from "./rest/adresse/edit-adresse/edit-adresse.component";
+import {EditPromotionComponent} from './rest/promotion/edit-promotion/edit-promotion.component';
+import {EditProgrammeComponent} from './rest/programme/edit-programme/edit-programme.component';
 
 export const routes: Routes = [
   {path: 'module', component: ModuleComponent},
@@ -26,8 +24,4 @@ export const routes: Routes = [
   {path: 'programme', component: ProgrammeComponent},
   {path: 'programme/edit', component: EditProgrammeComponent},
   {path: 'programme/edit/:id', component: EditProgrammeComponent},
-
-  {path: 'adresse', component: AdresseComponent},
-  {path: 'adresse/edit', component: EditAdresseComponent},
-  {path: 'adresse/edit/:id', component: EditAdresseComponent},
 ];
