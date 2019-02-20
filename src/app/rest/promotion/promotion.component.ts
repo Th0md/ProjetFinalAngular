@@ -10,7 +10,8 @@ import {PromotionService} from '../service/promotion.service';
 export class PromotionComponent implements OnInit {
 
   private promotions: Promotion[];
-  private date: Date = new Date();
+  private _date: Date = new Date();
+  private _test: Date = new Date();
 
   constructor(private promotionService: PromotionService) {
   }
@@ -34,4 +35,21 @@ export class PromotionComponent implements OnInit {
     });
   }
 
+
+  get date(): Date {
+    return this._date;
+  }
+
+  set date(value: Date) {
+    this._date = value;
+  }
+
+
+  get test(): Date {
+    return this._test;
+  }
+
+  set test(value: Date) {
+    this._test = value;
+  }
 }
