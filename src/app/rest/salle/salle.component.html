@@ -1,0 +1,21 @@
+<h1>Salles</h1>
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Code</td>
+    <td>Cout</td>
+    <td>Disponibilité</td>
+    <td>Capacité</td>
+    <td><button [routerLink]="['/salle','edit']" routerLinkActive="active">Ajouter</button></td>
+    <td></td>
+  </tr>
+  <tr *ngFor="let s of salles">
+    <td>{{s.id}}</td>
+    <td>{{s.code}}</td>
+    <td>{{s.cout}}</td>
+    <td>{{s.disponibilite}}</td>
+    <td>{{s.capacite}}</td>
+    <td><button [routerLink]="['/salle','edit',s.id]" routerLinkActive="active">Modifier</button></td>
+    <td><button (click)="delete(s.id)">Supprimer</button></td>
+  </tr>
+</table>

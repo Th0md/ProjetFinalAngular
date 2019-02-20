@@ -14,6 +14,10 @@ import { EditStagiaireComponent } from './rest/stagiaire/edit-stagiaire/edit-sta
 import { EditProgrammeComponent } from './rest/programme/edit-programme/edit-programme.component';
 import { EditPromotionComponent } from './rest/promotion/edit-promotion/edit-promotion.component';
 import { EditAdresseComponent } from './rest/adresse/edit-adresse/edit-adresse.component';
+import { FormateurComponent } from './rest/formateur/formateur.component';
+import { SalleComponent } from './rest/salle/salle.component';
+import { EditSalleComponent } from './rest/salle/edit-salle/edit-salle.component';
+import { EditFormateurComponent } from './rest/formateur/edit-formateur/edit-formateur.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { EditAdresseComponent } from './rest/adresse/edit-adresse/edit-adresse.c
     EditStagiaireComponent,
     EditProgrammeComponent,
     EditPromotionComponent,
-    EditAdresseComponent
+    EditAdresseComponent,
+    FormateurComponent,
+    SalleComponent,
+    EditSalleComponent,
+    EditFormateurComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule

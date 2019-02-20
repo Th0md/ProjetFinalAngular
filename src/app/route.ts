@@ -7,6 +7,8 @@ import {EditModuleComponent} from './rest/module/edit-module/edit-module.compone
 import {EditStagiaireComponent} from './rest/stagiaire/edit-stagiaire/edit-stagiaire.component';
 import {EditPromotionComponent} from './rest/promotion/edit-promotion/edit-promotion.component';
 import {EditProgrammeComponent} from './rest/programme/edit-programme/edit-programme.component';
+import {FormateurComponent} from './rest/formateur/formateur.component';
+import {SalleComponent} from './rest/salle/salle.component';
 
 export const routes: Routes = [
   {path: 'module', component: ModuleComponent},
@@ -16,6 +18,14 @@ export const routes: Routes = [
   {path: 'stagiaire', component: StagiaireComponent},
   {path: 'stagiaire/edit', component: EditStagiaireComponent},
   {path: 'stagiaire/edit/:id', component: EditStagiaireComponent},
+
+  {path: 'formateur', component: FormateurComponent},
+  {path: 'formateur/edit', component: EditFormateurComponent},
+  {path: 'formateur/edit/:id', component: EditFormateurComponent},
+
+  {path: 'salle', component: SalleComponent},
+  {path: 'salle/edit', component: EditSalleComponent},
+  {path: 'salle/edit/:id', component: EditSalleComponent},
 
   {path: 'promotion', component: PromotionComponent},
   {path: 'promotion/edit', component: EditPromotionComponent},
