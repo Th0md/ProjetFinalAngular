@@ -16,6 +16,34 @@ export class EditStagiaireComponent implements OnInit {
   constructor(private stagiaireService: StagiaireService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe(params => {
+      if (params.id) {
+        this.edit = true;
+        this.stagiaireService.findById(params.id).subscribe(result => {
+          this.stagiaire = result;
+        });
+      }
+    });
+  }
+
+  public save() {
+    if (this.edit) {
+      this.update();
+    } else {
+      this.create();
+    }
+  }
+
+  private create() {
+    this.stagiaireService.create(this.stagiaire).subscribe(result => {
+      this.goList();
+    });
+  }
+
+  private update() {
+    this.stagiaireService.update(this.stagiaire).subscribe(result => {
+      this.goList();
+    });
   }
 
 

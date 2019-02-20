@@ -6,6 +6,9 @@ import {ProgrammeComponent} from './rest/programme/programme.component';
 import {AdresseComponent} from './rest/adresse/adresse.component';
 import {EditModuleComponent} from './rest/module/edit-module/edit-module.component';
 import {EditStagiaireComponent} from './rest/stagiaire/edit-stagiaire/edit-stagiaire.component';
+import {EditPromotionComponent} from "./rest/promotion/edit-promotion/edit-promotion.component";
+import {EditProgrammeComponent} from "./rest/programme/edit-programme/edit-programme.component";
+import {EditAdresseComponent} from "./rest/adresse/edit-adresse/edit-adresse.component";
 
 export const routes: Routes = [
   {path: 'module', component: ModuleComponent},

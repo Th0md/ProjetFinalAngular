@@ -1,32 +1,54 @@
 import {Injectable} from '@angular/core';
 import {Stagiaire} from '../../model/stagiaire';
 import {Adresse} from '../../model/adresse';
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {Programme} from "../../model/programme";
 
 @Injectable({
   providedIn: 'root'
 })
 export class StagiaireService {
 
-  constructor() {
-    this.fakeList.push(new Stagiaire(1, 'Bidon', 'Toto', '0123456789', (new Adresse('Rue des Lilas', '75214', 'Villekonc'))));
-    this.fakeList.push(new Stagiaire(2, 'Douillon', 'Bonno', '0214789658', (new Adresse('Rue Charles', '65498', 'Kooltown'))));
-    this.fakeList.push(new Stagiaire(3, 'Carton', 'Marteau', '0321654987', (new Adresse('Rue des Kaplats', '32165', 'Golfville'))));
-    this.fakeList.push(new Stagiaire(4, 'Lardon', 'Choufleur', '0789123456', (new Adresse('Rue du Ballet', '98765', 'Letrous'))));
-  }
+  private headers: HttpHeaders;
 
-  private fakeList: Stagiaire[] = new Array();
-
-  public findAll() {
-    console.log(this.fakeList);
-    return this.fakeList;
-  }
-
-  public findById(id: number) {
+  constructor(private http: HttpClient) {
+    this.headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + btoa('toto:toto')
+      }
+    );
 
   }
 
+  public findAll(): Observable<any> {
+    return this.http.get<any>('http://localhost:8080/projetfinal/api/stagiaires/', {headers: this.headers});
+  }
 
-  delete(id: number) {
-    return this.fakeList.splice(id);
+  public findById(code: string): Observable<any> {
+    return this.http.get<any>(`http://localhost:8080/projetfinal/api/stagiaires/${code}`, {headers: this.headers});
+  }
+
+  public delete(id: number): Observable<any> {
+    return this.http.delete(`
+    http://localhost:8080/projetfinal/api/stagiaires/${id}`, {headers: this.headers});
+  }
+
+  public update(stagiaire: Stagiaire): Observable<any> {
+    console.log(stagiaire);
+    return this.http.put<any>(`http://localhost:8080/projetfinal/api/stagiaires/${stagiaire.id}`, stagiaire, {headers: this.headers});
+  }
+
+  public create(stagiaire: Stagiaire): Observable<any> {
+    const s = {
+      'id': stagiaire.id,
+      'nom': stagiaire.nom,
+      'prenom': stagiaire.prenom,
+      'coordonnees': stagiaire.coordonnees,
+      'rue': stagiaire.adresse.rue,
+      'codePostal': stagiaire.adresse.codePostal,
+      'ville': stagiaire.adresse.ville,
+    };
+    return this.http.post<any>(`http://localhost:8080/projetfinal/api/stagiaires`, s, {headers: this.headers});
   }
 }

@@ -18,7 +18,10 @@ export class StagiaireComponent implements OnInit {
   }
 
   private list() {
-    this.stagiaires = this.stagiaireService.findAll();
+    this.stagiaireService.findAll().subscribe(result => {
+      console.log(result);
+      this.stagiaires = result._embedded.stagiaires;
+    });
   }
 
   delete(id: number) {

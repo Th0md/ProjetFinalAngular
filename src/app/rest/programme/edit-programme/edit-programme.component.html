@@ -1,0 +1,10 @@
+<div class="form-group" *ngIf="edit;else create">
+  code:<input readonly class="form-control" [(ngModel)]="programme.titre">
+</div>
+<ng-template #create>
+  code:<input class="form-control" [(ngModel)]="programme.titre">
+</ng-template>
+<div class="form-group">
+  <button (click)="save()">Enregistrer</button>
+  <button (click)="cancel()">Annuler</button>
+</div>

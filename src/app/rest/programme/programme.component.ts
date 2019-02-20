@@ -16,6 +16,22 @@ export class ProgrammeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.list();
+  }
+
+  private list() {
+    this.programmeService.findAll().subscribe(result => {
+      console.log(result);
+      this.programmes = result._embedded.programmes;
+    });
+  }
+
+  delete(code: string) {
+    this.programmeService.delete(code).subscribe(result => {
+      this.list();
+    }, error => {
+      console.log(error);
+    });
   }
 
 }

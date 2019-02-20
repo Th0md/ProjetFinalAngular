@@ -11,6 +11,9 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { EditModuleComponent } from './rest/module/edit-module/edit-module.component';
 import { EditStagiaireComponent } from './rest/stagiaire/edit-stagiaire/edit-stagiaire.component';
+import { EditProgrammeComponent } from './rest/programme/edit-programme/edit-programme.component';
+import { EditPromotionComponent } from './rest/promotion/edit-promotion/edit-promotion.component';
+import { EditAdresseComponent } from './rest/adresse/edit-adresse/edit-adresse.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { EditStagiaireComponent } from './rest/stagiaire/edit-stagiaire/edit-sta
     StagiaireComponent,
     AdresseComponent,
     EditModuleComponent,
-    EditStagiaireComponent
+    EditStagiaireComponent,
+    EditProgrammeComponent,
+    EditPromotionComponent,
+    EditAdresseComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule
