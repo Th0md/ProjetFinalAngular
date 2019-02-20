@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Promotion} from '../../model/promotion';
 import {PromotionService} from '../service/promotion.service';
 
@@ -10,6 +10,7 @@ import {PromotionService} from '../service/promotion.service';
 export class PromotionComponent implements OnInit {
 
   private promotions: Promotion[];
+  private date: Date = new Date();
 
   constructor(private promotionService: PromotionService) {
   }
@@ -21,7 +22,7 @@ export class PromotionComponent implements OnInit {
   private list() {
     this.promotionService.findAll().subscribe(result => {
       console.log(result);
-      this.promotions = result._embedded.promotions;
+      this.promotions = result;
     });
   }
 

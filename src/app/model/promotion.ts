@@ -1,6 +1,8 @@
+import {Programme} from './programme';
+
 export class Promotion {
 
-  constructor(private _id?: number, private _nom?: string, private _debut?: Date, private _fin?: Date) {
+  constructor(private _id?: number, private _nom?: string, private _debut?: Date, private _fin?: Date, private _programme?: Programme) {
 
   }
 
@@ -35,5 +37,13 @@ export class Promotion {
 
   set nom(value: string) {
     this._nom = value;
+  }
+
+  get programme(): Programme {
+    return this._programme;
+  }
+
+  set programme(value: Programme) {
+    this._programme = value;
   }
 }

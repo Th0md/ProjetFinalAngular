@@ -1,19 +1,24 @@
-<h1>Promotion</h1>
+<h1>Promotion list</h1>
 <table>
   <tr>
-    <td>Id</td>
-    <td>Nom de Promotion</td>
-    <td>Debut</td>
-    <td>Fin</td>
-    <td><button [routerLink]="['/promotion','edit']" routerLinkActive="active">Ajouter</button></td>
-    <td></td>
+    <td>id</td>
+    <td>debut</td>
+    <td>fin</td>
+    <td>nom</td>
+    <td>programme_titre</td>
+    <td>en cours</td>
   </tr>
   <tr *ngFor="let p of promotions">
     <td>{{p.id}}</td>
-    <td>{{p.nom}}</td>
     <td>{{p.debut}}</td>
     <td>{{p.fin}}</td>
-    <td><button [routerLink]="['/promotion','edit',p.id]" routerLinkActive="active">Modifier</button></td>
-    <td><button (click)="delete(p.id)">Supprimer</button></td>
+    <td>
+      <a [routerLink]="['/stagiaire','edit', p.id]" routerLinkActive="active">{{p.nom}}</a>
+    </td>
+    <td>{{p.programme.titre}}</td>
+    <td *ngIf="date>p.debut;else autre">true</td>
   </tr>
 </table>
+<ng-template #autre>
+  <td>false</td>
+</ng-template>

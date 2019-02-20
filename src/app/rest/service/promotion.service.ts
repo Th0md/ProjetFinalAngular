@@ -20,7 +20,7 @@ export class PromotionService {
   }
 
   public findAll(): Observable<any> {
-    return this.http.get<any>('http://localhost:8080/projet/rest/promotions/', {headers: this.headers});
+    return this.http.get<any>('http://localhost:8080/projet/rest/promotion/', {headers: this.headers});
   }
 
   public findById(id: number): Observable<any> {

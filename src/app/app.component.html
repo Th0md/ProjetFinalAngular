@@ -1,15 +1,8 @@
+
 <div>
-  <app-promotion></app-promotion>
+  menu <a [routerLink]="['/promotion']" routerLinkActive="active" > Promotion list</a> <a [routerLink]="['/programme']" routerLinkActive="active">Programme</a>
+  <a [routerLink]="['/module']" routerLinkActive="active" > Module</a>  <a [routerLink]="['/stagiaire']" routerLinkActive="active" > Stagiaires</a>
 </div>
-<div>
-  <app-programme></app-programme>
-</div>
-<div>
-  <app-module></app-module>
-</div>
-<div>
-  <app-stagiaire></app-stagiaire>
-</div>
-<div>
-  <app-adresse></app-adresse>
-</div>
+
+
+<router-outlet></router-outlet>
