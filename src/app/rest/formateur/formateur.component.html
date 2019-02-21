@@ -8,7 +8,7 @@
     <td>Rue</td>
     <td>Code postal</td>
     <td>Ville</td>
-    <td><button [routerLink]="['/formateur','edit']" routerLinkActive="active">Ajouter</button></td>
+    <td><a [routerLink]="['/formateur','edit']" routerLinkActive="active">Ajouter</a></td>
     <td></td>
   </tr>
   <tr *ngFor="let f of formateurs">
@@ -19,7 +19,7 @@
     <td>{{s.adresse.rue}}</td>
     <td>{{s.adresse.codePostal}}</td>
     <td>{{s.adresse.ville}}</td>
-    <td><button [routerLink]="['/formateur','edit',f.id]" routerLinkActive="active">Modifier</button></td>
+    <td><a [routerLink]="['/formateur','edit',f.id]" routerLinkActive="active">Modifier</a></td>
     <td><button (click)="delete(f.id)">Supprimer</button></td>
   </tr>
 </table>

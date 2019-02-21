@@ -9,6 +9,8 @@ import {EditPromotionComponent} from './rest/promotion/edit-promotion/edit-promo
 import {EditProgrammeComponent} from './rest/programme/edit-programme/edit-programme.component';
 import {FormateurComponent} from './rest/formateur/formateur.component';
 import {SalleComponent} from './rest/salle/salle.component';
+import {EditFormateurComponent} from './rest/formateur/edit-formateur/edit-formateur.component';
+import {EditSalleComponent} from './rest/salle/edit-salle/edit-salle.component';
 
 export const routes: Routes = [
   {path: 'module', component: ModuleComponent},
