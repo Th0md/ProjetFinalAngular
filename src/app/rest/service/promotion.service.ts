@@ -34,7 +34,7 @@ export class PromotionService {
 
   public update(promotion: Promotion): Observable<any> {
     console.log(promotion);
-    return this.http.put<any>(`http://localhost:8080/projet/rest/promotion/${promotion.id}`, promotion, {headers: this.headers});
+    return this.http.put<any>(`http://localhost:8080/projet/rest/promotion/update${promotion.id}`, promotion, {headers: this.headers});
   }
 
   public create(promotion: Promotion): Observable<any> {
