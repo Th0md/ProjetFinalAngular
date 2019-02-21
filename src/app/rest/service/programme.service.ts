@@ -13,7 +13,7 @@ export class ProgrammeService {
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'Basic ' + btoa('toto:toto')
+        'Authorization': 'Basic ' + btoa('tutu:tutu')
       }
     );
 

@@ -20,7 +20,7 @@ export class ModuleComponent implements OnInit {
   private list() {
     this.moduleService.findAll().subscribe(result => {
       console.log(result);
-      this.modules = result._embedded.modules;
+      this.modules = result;
     });
   }
 

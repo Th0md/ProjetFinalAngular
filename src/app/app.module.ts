@@ -16,6 +16,8 @@ import { FormateurComponent } from './rest/formateur/formateur.component';
 import { SalleComponent } from './rest/salle/salle.component';
 import { EditSalleComponent } from './rest/salle/edit-salle/edit-salle.component';
 import { EditFormateurComponent } from './rest/formateur/edit-formateur/edit-formateur.component';
+import { ListeStagiaireComponent } from './rest/liste-stagiaire/liste-stagiaire.component';
+import { EditListeStagiaireComponent } from './rest/liste-stagiaire/edit-liste-stagiaire/edit-liste-stagiaire.component';
 import {RouterModule} from '@angular/router';
 import {routes} from './route';
 
@@ -33,7 +35,9 @@ import {routes} from './route';
     FormateurComponent,
     SalleComponent,
     EditSalleComponent,
-    EditFormateurComponent
+    EditFormateurComponent,
+    ListeStagiaireComponent,
+    EditListeStagiaireComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes)

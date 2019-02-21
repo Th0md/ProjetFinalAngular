@@ -3,13 +3,15 @@
   <tr>
     <td>Id</td>
     <td>Titre du Programme</td>
-    <td><button [routerLink]="['/programme','edit']" routerLinkActive="active">Ajouter</button></td>
+    <td><a [routerLink]="['/programme','edit']" routerLinkActive="active">Ajouter</a></td>
     <td></td>
   </tr>
   <tr *ngFor="let p of programmes">
     <td>{{p.id}}</td>
     <td>{{p.titre}}</td>
-    <td><button [routerLink]="['/programme','edit',p.titre]" routerLinkActive="active">Modifier</button></td>
-    <td><button (click)="delete(p.titre)">Supprimer</button></td>
+    <td><a [routerLink]="['/programme','edit',p.titre]" routerLinkActive="active">Modifier</a></td>
+    <td>
+      <button (click)="delete(p.titre)">Supprimer</button>
+    </td>
   </tr>
 </table>

@@ -14,14 +14,14 @@ export class SalleService {
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'Basic ' + btoa('toto:toto')
+        'Authorization': 'Basic ' + btoa('tutu:tutu')
       }
     );
 
   }
 
   public findAll(): Observable<any> {
-    return this.http.get<any>('http://localhost:8080/projet/rest/salles/', {headers: this.headers});
+    return this.http.get<any>('http://localhost:8080/projet/rest/salle/', {headers: this.headers});
   }
 
   public findById(id: number): Observable<any> {

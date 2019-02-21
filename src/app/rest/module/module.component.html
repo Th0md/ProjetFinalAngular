@@ -1,17 +1,28 @@
-<h1>Modules</h1>
+<h1>Modules </h1>
+<div>
+  <button class="btn btn-warning" [routerLink]="['/module','edit']" routerLinkActive="active">Ajouter</button>
+</div>
 <table>
   <tr>
     <td>Id</td>
-    <td>Debut</td>
-    <td>Fin</td>
-    <td><button [routerLink]="['/module','edit']" routerLinkActive="active">Ajouter</button></td>
-    <td></td>
+    <td>Date de début</td>
+    <td>Date de fin</td>
+    <td>Module</td>
+    <td>Formateur</td>
+    <td>Promotion</td>
+    <td>Salle</td>
   </tr>
   <tr *ngFor="let m of modules">
     <td>{{m.id}}</td>
     <td>{{m.debut}}</td>
     <td>{{m.fin}}</td>
+    <td>{{m.matiere.nomMatiere}}</td>
+    <td>{{m.formateur.nom}}</td>
+    <td>{{m.promotion.nom}}</td>
+    <td>{{m.salle.code}}</td>
     <td><button [routerLink]="['/module','edit',m.id]" routerLinkActive="active">Modifier</button></td>
-    <td><button (click)="delete(m.id)">Supprimer</button></td>
+    <td>
+      <button (click)="delete(m.id)">Supprimer</button>
+    </td>
   </tr>
 </table>

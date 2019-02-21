@@ -11,6 +11,8 @@ import {FormateurComponent} from './rest/formateur/formateur.component';
 import {SalleComponent} from './rest/salle/salle.component';
 import {EditFormateurComponent} from './rest/formateur/edit-formateur/edit-formateur.component';
 import {EditSalleComponent} from './rest/salle/edit-salle/edit-salle.component';
+import {ListeStagiaireComponent} from './rest/liste-stagiaire/liste-stagiaire.component';
+import {EditListeStagiaireComponent} from './rest/liste-stagiaire/edit-liste-stagiaire/edit-liste-stagiaire.component';
 
 export const routes: Routes = [
   {path: 'module', component: ModuleComponent},
@@ -33,7 +35,10 @@ export const routes: Routes = [
   {path: 'promotion/edit', component: EditPromotionComponent},
   {path: 'promotion/edit/:id', component: EditPromotionComponent},
 
-  {path: 'programme', component: ProgrammeComponent},
-  {path: 'programme/edit', component: EditProgrammeComponent},
-  {path: 'programme/edit/:id', component: EditProgrammeComponent},
+
+  {path: 'listestagiaire', component: ListeStagiaireComponent},
+  {path: 'listestagiaire/:id', component: ListeStagiaireComponent},
+  {path: 'listestagiaire/edit', component: EditListeStagiaireComponent},
+  {path: 'listestagiaire/edit/:id', component: EditListeStagiaireComponent},
+  {path: 'ajoutstagiaire', component: EditListeStagiaireComponent},
 ];
