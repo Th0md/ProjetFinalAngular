@@ -40,9 +40,9 @@ export class MatiereService { private headers: HttpHeaders;
       'id': formateur.id,
       'nom': formateur.nom,
       'prenom': formateur.prenom,
-      'coordonnees': formateur.coordonnees,
+      'coordonnees': formateur.coordonnee,
       'rue': formateur.adresse.rue,
-      'codePostal': formateur.adresse.codePostal,
+      'codePostal': formateur.adresse.CP,
       'ville': formateur.adresse.ville,
     };
     return this.http.post<any>(`http://localhost:8080/projet/rest/matiere`, f, {headers: this.headers});

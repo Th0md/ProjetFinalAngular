@@ -1,7 +1,7 @@
 import {Adresse} from './adresse';
 
 export class Formateur {
-  constructor(private _id?: number, private  _nom?: string, private _prenom?: string, private  _coordonnees?: string, private _adresse?: Adresse) {
+  constructor(private _id?: number, private  _nom?: string, private _prenom?: string, private  _coordonnee?: string, private _adresse?: Adresse) {
   }
 
 
@@ -29,12 +29,12 @@ export class Formateur {
     this._prenom = value;
   }
 
-  get coordonnees(): string {
-    return this._coordonnees;
+  get coordonnee(): string {
+    return this._coordonnee;
   }
 
-  set coordonnees(value: string) {
-    this._coordonnees = value;
+  set coordonnee(value: string) {
+    this._coordonnee = value;
   }
 
   get adresse(): Adresse {

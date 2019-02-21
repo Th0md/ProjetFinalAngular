@@ -34,18 +34,18 @@ export class StagiaireService {
 
   public update(stagiaire: Stagiaire): Observable<any> {
     console.log(stagiaire);
-    return this.http.put<any>(`http://localhost:8080/projet/rest/stagiaire/update`, stagiaire, {headers: this.headers});
+    return this.http.put<any>(`http://localhost:8080/projet/rest/stagiaire/update}`, stagiaire, {headers: this.headers});
   }
 
   public create(stagiaire: Stagiaire): Observable<any> {
     const s = {
-      'id': stagiaire.id,
-      'nom': stagiaire.nom,
-      'prenom': stagiaire.prenom,
-      'coordonnees': stagiaire.coordonnee,
-      'rue': stagiaire.adresse.rue,
-      'codePostal': stagiaire.adresse.CP,
-      'ville': stagiaire.adresse.ville
+      id: stagiaire.id,
+      nom: stagiaire.nom,
+      prenom: stagiaire.prenom,
+      coordonnees: stagiaire.coordonnee
+      //'rue': stagiaire.adresse.rue,
+      //'codePostal': stagiaire.adresse.CP,
+      //'ville': stagiaire.adresse.ville
     };
     return this.http.post<any>(`http://localhost:8080/projet/rest/stagiaire/insert`, s, {headers: this.headers});
   }

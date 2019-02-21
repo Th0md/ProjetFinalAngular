@@ -23,6 +23,7 @@ export class EditStagiaireComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       if (params.id) {
         this.edit = true;
+        console.log(this.edit);
         this.stagiaireService.findById(params.id).subscribe(result => {
           this.stagiaire = result;
           console.log(this.stagiaire);
@@ -34,14 +35,13 @@ export class EditStagiaireComponent implements OnInit {
   }
 
   public save() {
-    if (this.edit) {
-      //this.stagiaire.adresse = this.adresse;
+    if (this.edit === true) {
       this.update();
       console.log('ici update');
       console.log(this.edit);
+      console.log((this.stagiaire));
     } else {
       console.log('ici create');
-      //this.stagiaire.adresse = this.adresse;
       this.create();
       console.log(this.edit);
     }
@@ -54,6 +54,8 @@ export class EditStagiaireComponent implements OnInit {
   }
 
   private update() {
+    console.log(('update2'));
+    console.log((this.stagiaire));
     this.stagiaireService.update(this.stagiaire).subscribe(result => {
       this.goList();
     });

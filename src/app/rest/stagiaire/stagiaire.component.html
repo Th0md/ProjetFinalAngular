@@ -5,9 +5,9 @@
     <td>Nom</td>
     <td>Prenom</td>
     <td>Coordonnées</td>
-    <td>Rue</td>
+    <!-- <td>Rue</td>
     <td>Code postal</td>
-    <td>Ville</td>
+    <td>Ville</td> -->
     <td><button [routerLink]="['/stagiaire','edit']" routerLinkActive="active">Ajouter</button></td>
     <td></td>
   </tr>
@@ -16,9 +16,9 @@
     <td>{{s.nom}}</td>
     <td>{{s.prenom}}</td>
     <td>{{s.coordonnee}}</td>
-    <td>{{s.adresse.rue}}</td>
+    <!-- <td>{{s.adresse.rue}}</td>
     <td>{{s.adresse.CP}}</td>
-    <td>{{s.adresse.ville}}</td>
+    <td>{{s.adresse.ville}}</td> -->
     <td><button [routerLink]="['/stagiaire','edit',s.id]" routerLinkActive="active">Modifier</button></td>
     <td><button (click)="delete(s.id)">Supprimer</button></td>
   </tr>

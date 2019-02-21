@@ -3,7 +3,7 @@ import {Ordinateur} from './ordinateur';
 
 export class Stagiaire {
 
-  constructor(private _id?: number, private _nom?: string, private _prenom?: string, private _coordonnees?: string,
+  constructor(private _id?: number, private _nom?: string, private _prenom?: string, private _coordonnee?: string,
               private _adresse?: Adresse, private _ordinateur?: Ordinateur) {
   }
 
