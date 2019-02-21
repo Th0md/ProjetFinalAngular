@@ -44,7 +44,7 @@ export class FormateurService {
       'prenom': formateur.prenom,
       'coordonnees': formateur.coordonnees,
       'rue': formateur.adresse.rue,
-      'codePostal': formateur.adresse.codePostal,
+      'codePostal': formateur.adresse.CP,
       'ville': formateur.adresse.ville,
     };
     return this.http.post<any>(`http://localhost:8080/projet/rest/stagiaires`, f, {headers: this.headers});

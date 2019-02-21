@@ -9,7 +9,7 @@ import {Stagiaire} from '../../model/stagiaire';
 })
 export class StagiaireComponent implements OnInit {
 
-  private stagiaires: Stagiaire[];
+  private stagiaires: Stagiaire[] = new Array();
 
   constructor(private stagiaireService: StagiaireService) { }
 
@@ -20,7 +20,7 @@ export class StagiaireComponent implements OnInit {
   private list() {
     this.stagiaireService.findAll().subscribe(result => {
       console.log(result);
-      this.stagiaires = result._embedded.stagiaires;
+      this.stagiaires = result;
     });
   }
 

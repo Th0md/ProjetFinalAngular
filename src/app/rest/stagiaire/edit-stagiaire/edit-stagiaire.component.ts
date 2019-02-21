@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Stagiaire} from '../../../model/stagiaire';
 import {StagiaireService} from '../../service/stagiaire.service';
+import {Adresse} from '../../../model/adresse';
 
 @Component({
   selector: 'app-edit-stagiaire',
@@ -13,7 +14,10 @@ export class EditStagiaireComponent implements OnInit {
   private stagiaire: Stagiaire = new Stagiaire();
   private edit = false;
 
-  constructor(private stagiaireService: StagiaireService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  //private adresse: Adresse = new Adresse();
+
+  constructor(private stagiaireService: StagiaireService, private activatedRoute: ActivatedRoute, private router: Router) {
+  }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
@@ -21,16 +25,25 @@ export class EditStagiaireComponent implements OnInit {
         this.edit = true;
         this.stagiaireService.findById(params.id).subscribe(result => {
           this.stagiaire = result;
+          console.log(this.stagiaire);
         });
       }
     });
+    console.log('valeur edit');
+    console.log(this.edit);
   }
 
   public save() {
     if (this.edit) {
+      //this.stagiaire.adresse = this.adresse;
       this.update();
+      console.log('ici update');
+      console.log(this.edit);
     } else {
+      console.log('ici create');
+      //this.stagiaire.adresse = this.adresse;
       this.create();
+      console.log(this.edit);
     }
   }
 
