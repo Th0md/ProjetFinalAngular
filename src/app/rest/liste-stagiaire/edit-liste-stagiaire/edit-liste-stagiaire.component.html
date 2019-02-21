@@ -1,0 +1,21 @@
+<div class="form-group" *ngIf="edit;else create">
+  Id :<input readonly class="form-control" [(ngModel)]="stagiaire.id">
+</div>
+<ng-template #create>
+  Id :<input class="form-control" [(ngModel)]="stagiaire.id">
+</ng-template>
+<div class="form-group">
+  Nom :<input class="form-control" [(ngModel)]="stagiaire.nom">
+</div>
+<div class="form-group">
+  Prenom :<input class="form-control" [(ngModel)]="stagiaire.prenom">
+</div>
+<div class="form-group">
+  Ordinateur: <select name="ordinateurs">
+  <option *ngFor="let o of ordinateurs"  value="o.id">{{o.id}}</option>
+</select>
+</div>
+<div class="form-group">
+  <button (click)="save()">Enregistrer</button>
+  <button (click)="cancel()">Annuler</button>
+</div>

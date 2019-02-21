@@ -13,6 +13,7 @@
     <td>{{p.nom}}</td>
     <td>{{p.debut}}</td>
     <td>{{p.fin}}</td>
+    <td><button [routerLink]="['/listestagiaire',p.id]" routerLinkActive="active">Stagiaires</button></td>
     <td><button [routerLink]="['/promotion','edit',p.id]" routerLinkActive="active">Modifier</button></td>
     <td><button (click)="delete(p.id)">Supprimer</button></td>
   </tr>
