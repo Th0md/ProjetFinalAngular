@@ -5,11 +5,10 @@ import {Stagiaire} from './stagiaire';
 export class Promotion {
 
   constructor(private _id?: number, private _nom?: string, private _debut?: Date, private _fin?: Date, private _programme?: Programme) {
-
-
   }
 
   private _stagiaires: Stagiaire[];
+
 
   get id(): number {
     return this._id;
