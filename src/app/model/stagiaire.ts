@@ -42,11 +42,11 @@ export class Stagiaire {
 
 
   get coordonnee(): string {
-    return this._coordonnee;
+    return this._coordonnees;
   }
 
   set coordonnee(value: string) {
-    this._coordonnee = value;
+    this._coordonnees = value;
   }
 
   get adresse(): Adresse {

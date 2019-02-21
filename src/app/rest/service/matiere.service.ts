@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Formateur} from '../../model/formateur';
@@ -6,7 +6,8 @@ import {Formateur} from '../../model/formateur';
 @Injectable({
   providedIn: 'root'
 })
-export class MatiereService { private headers: HttpHeaders;
+export class MatiereService {
+  private headers: HttpHeaders;
 
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
@@ -42,7 +43,7 @@ export class MatiereService { private headers: HttpHeaders;
       'prenom': formateur.prenom,
       'coordonnees': formateur.coordonnees,
       'rue': formateur.adresse.rue,
-      'codePostal': formateur.adresse.codePostal,
+      'codePostal': formateur.adresse.CP,
       'ville': formateur.adresse.ville,
     };
     return this.http.post<any>(`http://localhost:8080/projet/rest/matiere`, f, {headers: this.headers});
