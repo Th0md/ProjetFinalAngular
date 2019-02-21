@@ -10,6 +10,8 @@
     <td>{{p.id}}</td>
     <td>{{p.titre}}</td>
     <td><a [routerLink]="['/programme','edit',p.titre]" routerLinkActive="active">Modifier</a></td>
-    <td><button (click)="delete(p.titre)">Supprimer</button></td>
+    <td>
+      <button (click)="delete(p.titre)">Supprimer</button>
+    </td>
   </tr>
 </table>

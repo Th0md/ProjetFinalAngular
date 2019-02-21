@@ -1,6 +1,22 @@
+import {Formateur} from './formateur';
+import {Salle} from './salle';
+import {Promotion} from './promotion';
+import {Matiere} from './matiere';
+
 export class Module {
 
-  constructor(private _id?: number, private _debut?: Date, private _fin?: Date){}
+  private _matiere: Matiere;
+
+  get matiere(): Matiere {
+    return this._matiere;
+  }
+
+  set matiere(value: Matiere) {
+    this._matiere = value;
+  }
+
+  constructor(private _id?: number, private _debut?: Date, private _fin?: Date, private _formateur?: Formateur, private _salle?: Salle, private _promotion?: Promotion) {
+  }
 
 
   get id(): number {
@@ -25,5 +41,30 @@ export class Module {
 
   set fin(value: Date) {
     this._fin = value;
+  }
+
+
+  get formateur(): Formateur {
+    return this._formateur;
+  }
+
+  set formateur(value: Formateur) {
+    this._formateur = value;
+  }
+
+  get salle(): Salle {
+    return this._salle;
+  }
+
+  set salle(value: Salle) {
+    this._salle = value;
+  }
+
+  get promotion(): Promotion {
+    return this._promotion;
+  }
+
+  set promotion(value: Promotion) {
+    this._promotion = value;
   }
 }

@@ -1,0 +1,22 @@
+<h1>Liste des stagiaires</h1>
+<a [routerLink]="['/ajoutstagiaire']" routerLinkActive="active">Ajouter</a>
+<table>
+  <tr>
+    <td>Nom</td>
+    <td>Prénom</td>
+    <td>Ordinateur</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr *ngFor="let s of listeStagiaire">
+    <td>{{s.nom}}</td>
+    <td>{{s.prenom}}</td>
+    <td>{{s.ordinateur.id}}</td>
+
+
+    <td><button [routerLink]="['/listestagiaire','edit',s.id]" routerLinkActive="active">Modifier</button></td>
+    <td><button (click)="delete(s.id)">Supprimer</button></td>
+    <td><button [routerLink]="['/stagiaire',s.id ]" routerLinkActive="active">Information</button></td>
+  </tr>
+</table>

@@ -1,3 +1,28 @@
-<p>
-  edit-formateur works!
-</p>
+<div class="form-group" *ngIf="edit;else create">
+  Id :<input readonly class="form-control" [(ngModel)]="formateur.id">
+</div>
+<ng-template #create>
+  Id :<input readonly class="form-control" [(ngModel)]="formateur.id">
+</ng-template>
+<div class="form-group">
+  Nom :<input class="form-control" [(ngModel)]="formateur.nom">
+</div>
+<div class="form-group">
+  Prenom :<input class="form-control" [(ngModel)]="formateur.prenom">
+</div>
+<div class="form-group">
+  Coordonnées :<input class="form-control" [(ngModel)]="formateur.coordonnee">
+</div>
+<div class="form-group">
+  Rue :<input class="form-control" [(ngModel)]="formateur.adresse.rue">
+</div>
+<div class="form-group">
+  Code postal :<input class="form-control" [(ngModel)]="formateur.adresse.CP">
+</div>
+<div class="form-group">
+  Ville :<input class="form-control" [(ngModel)]="formateur.adresse.ville">
+</div>
+<div class="form-group">
+  <button (click)="save()">Enregistrer</button>
+  <button (click)="cancel()">Annuler</button>
+</div>

@@ -1,22 +1,23 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
 import {Stagiaire} from '../../../model/stagiaire';
 import {StagiaireService} from '../../service/stagiaire.service';
-import {Adresse} from '../../../model/adresse';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Ordinateur} from '../../../model/ordinateur';
+import {OrdinateurService} from '../../service/ordinateur.service';
 
 @Component({
-  selector: 'app-edit-stagiaire',
-  templateUrl: './edit-stagiaire.component.html',
-  styleUrls: ['./edit-stagiaire.component.css']
+  selector: 'app-edit-liste-stagiaire',
+  templateUrl: './edit-liste-stagiaire.component.html',
+  styleUrls: ['./edit-liste-stagiaire.component.css']
 })
-export class EditStagiaireComponent implements OnInit {
+export class EditListeStagiaireComponent implements OnInit {
 
   private stagiaire: Stagiaire = new Stagiaire();
   private edit = false;
+  private ordinateurs: Ordinateur[];
 
-  //private adresse: Adresse = new Adresse();
-
-  constructor(private stagiaireService: StagiaireService, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private stagiaireService: StagiaireService, private activatedRoute: ActivatedRoute, private router: Router,
+              private ordinateurService: OrdinateurService) {
   }
 
   ngOnInit() {
@@ -25,25 +26,19 @@ export class EditStagiaireComponent implements OnInit {
         this.edit = true;
         this.stagiaireService.findById(params.id).subscribe(result => {
           this.stagiaire = result;
-          console.log(this.stagiaire);
         });
       }
+      this.ordinateurService.findAll().subscribe(result => {
+        this.ordinateurs = result;
+      });
     });
-    console.log('valeur edit');
-    console.log(this.edit);
   }
 
   public save() {
     if (this.edit) {
-      //this.stagiaire.adresse = this.adresse;
       this.update();
-      console.log('ici update');
-      console.log(this.edit);
     } else {
-      console.log('ici create');
-      //this.stagiaire.adresse = this.adresse;
       this.create();
-      console.log(this.edit);
     }
   }
 
@@ -65,7 +60,8 @@ export class EditStagiaireComponent implements OnInit {
   }
 
   private goList() {
-    this.router.navigate(['/stagiaire']);
+    this.router.navigate(['/listestagiaire']);
   }
 
 }
+

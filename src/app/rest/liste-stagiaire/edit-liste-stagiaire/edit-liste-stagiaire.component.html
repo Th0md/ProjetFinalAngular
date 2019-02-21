@@ -2,7 +2,7 @@
   Id :<input readonly class="form-control" [(ngModel)]="stagiaire.id">
 </div>
 <ng-template #create>
-  Id :<input readonly class="form-control" [(ngModel)]="stagiaire.id">
+  Id :<input class="form-control" [(ngModel)]="stagiaire.id">
 </ng-template>
 <div class="form-group">
   Nom :<input class="form-control" [(ngModel)]="stagiaire.nom">
@@ -11,16 +11,9 @@
   Prenom :<input class="form-control" [(ngModel)]="stagiaire.prenom">
 </div>
 <div class="form-group">
-  Coordonnées :<input class="form-control" [(ngModel)]="stagiaire.coordonnee">
-</div>
- <div class="form-group">
-  Rue :<input class="form-control" [(ngModel)]="stagiaire.adresse.rue">
-</div>
-<div class="form-group">
-  Code postal :<input class="form-control" [(ngModel)]="stagiaire.adresse.CP">
-</div>
-<div class="form-group">
-  Ville :<input class="form-control" [(ngModel)]="stagiaire.adresse.ville">
+  Ordinateur: <select name="ordinateurs">
+  <option *ngFor="let o of ordinateurs"  value="o.id">{{o.id}}</option>
+</select>
 </div>
 <div class="form-group">
   <button (click)="save()">Enregistrer</button>

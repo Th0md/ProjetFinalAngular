@@ -1,8 +1,11 @@
 import {Programme} from './programme';
 
+import {Stagiaire} from './stagiaire';
+
 export class Promotion {
 
   constructor(private _id?: number, private _nom?: string, private _debut?: Date, private _fin?: Date, private _programme?: Programme) {
+private _stagiaires: Stagiaire[];
 
   }
 
@@ -45,5 +48,14 @@ export class Promotion {
 
   set programme(value: Programme) {
     this._programme = value;
+  }
+
+
+  get stagiaires(): Stagiaire[] {
+    return this._stagiaires;
+  }
+
+  set stagiaires(value: Stagiaire[]) {
+    this._stagiaires = value;
   }
 }
